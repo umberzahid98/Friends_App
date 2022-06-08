@@ -1,0 +1,51 @@
+<%= form_with(model: dost, local: true) do |form| %>
+  <% if dost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dost.errors.count, "error") %> prohibited this dost from being saved:</h2>
+
+      <ul>
+      <% dost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.text_field :first_name,
+    class:"form-control", placeholder:"First Name" %>
+
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :last_name,
+    class:"form-control", placeholder:"Last Name"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :email,
+    class:"form-control", placeholder:"Email"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :phone,
+    class:"form-control", placeholder:"Phone"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :twitter,
+    class:"form-control", placeholder:"Twitter"  %>
+  </div>
+    <div class="field form-group">
+    <%= form.number_field :user_id,
+    id: :dost_user_id,
+    type: :hidden,
+    class:"form-control", value:current_user.id  %>
+  </div>
+  <br>
+  <div class="actions" >
+    <%= form.submit class:"btn btn-secondary" %>
+  </div>
+
+
+<% end %>

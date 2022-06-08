@@ -1,0 +1,17 @@
+
+<div class="jumbotron">
+  <h1 class="display-4"> <%= @dost.first_name %>
+  <%= @dost.last_name %></h1>
+  <%= @dost.email %> |  <%= @dost.phone %> | <%= @dost.twitter %>
+
+    <hr class="my-4">
+  <p class="lead">
+  <br >
+   <%= link_to 'Edit', edit_dost_path(@dost), class:"btn btn-secondary"  %>
+<%= link_to 'Back', dosts_path, class:"btn btn-secondary"  %>
+  </p>
+</div>
+
+
+
+
